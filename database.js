@@ -28,4 +28,13 @@ const database = mysql.createPool({
     console.error(err);
   });
   
+  database
+  .query("select * from users")
+  .then(([user]) => {
+    console.log(user);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
   module.exports = database;
